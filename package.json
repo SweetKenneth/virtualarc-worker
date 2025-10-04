@@ -1,9 +1,12 @@
 {
   "name": "virtualarc-worker",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev"
+    "start": "node api/health.js",
+    "build": "echo 'No build step needed'"
   },
-  "dependencies": {}
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
 }
