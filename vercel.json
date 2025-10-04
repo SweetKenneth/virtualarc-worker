@@ -1,6 +1,5 @@
 {
   "name": "virtualarc-worker",
-  "private": false,
   "version": "1.0.0",
   "scripts": {
     "dev": "vercel dev",
