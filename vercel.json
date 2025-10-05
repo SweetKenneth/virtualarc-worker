@@ -26,7 +26,18 @@
     }
   ],
   "env": {
-    "VITE_WORKER_API_KEY": "@VITE_WORKER_API_KEY",
-    "WORKER_API_KEY": "@NEXT_PUBLIC_WORKER_API_KEY"
+    "VITE_WORKER_API_KEY": "@VITE_WORKER_API_KEY"
+  },
+  "build": {
+    "env": {
+      "VITE_WORKER_API_KEY": "@VITE_WORKER_API_KEY"
+    }
+  },
+  "framework": "vite",
+  "regions": ["iad1"],
+  "github": {
+    "enabled": true,
+    "autoJobCancelation": true,
+    "silent": false
   }
 }
