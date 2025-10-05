@@ -1,15 +1,32 @@
 {
-  "version": 3,
+  "version": 2,
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "builds": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node@2.0.0"
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "VITE_WORKER_API_KEY": "@VITE_WORKER_API_KEY",
+    "NEXT_PUBLIC_WORKER_API_KEY": "@NEXT_PUBLIC_WORKER_API_KEY"
+  }
 }
